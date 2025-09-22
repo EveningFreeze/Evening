@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今日新闻</title>
+  <style>
+    /* 全局样式 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 顶部标题栏 */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #f4f4f4;
+    }
+
+    /* 导航栏 */
+    .nav {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #333;
+    }
+
+    .nav li {
+      padding: 10px 20px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .nav li:hover {
+      background-color: #555;
+    }
+
+    /* 图片轮播区域 */
+    .slider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-color: #e0e0e0;
+    }
+
+    .slide {
+      width: 300px;
+      height: 200px;
+      margin: 0 10px;
+      background-color: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 新闻列表区域 */
+    .news-container {
+      display: flex;
+      padding: 20px;
+    }
+
+    .news-image {
+      width: 200px;
+      height: 150px;
+      background-color: #ccc;
+      margin-right: 20px;
+    }
+
+    .news-list {
+      flex: 1;
+    }
+
+    .news-item {
+      margin-bottom: 10px;
+    }
+
+    /* 侧边栏 */
+    .sidebar {
+      width: 250px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 推荐阅读小块 */
+    .recommended {
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 1px solid #ccc;
+    }
+
+    .recommended h4 {
+      margin: 0 0 10px 0;
+    }
+
+    .recommended-item {
+      margin-bottom: 8px;
+    }
+
+    /* 特定文字样式 */
+    .tiffany-blue {
+      color: #0abab5;
+      font-family: 宋体;
+      font-weight: bold;
+    }
+
+    .rolex-green {
+      color: #008000;
+      font-family: 仿宋;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 顶部标题栏 -->
+  <div class="header">
+    <h1>Today</h1>
+    <h2>欢迎来到今日新闻</h2>
+    <div>
+      <input type="text" placeholder="请输入...">
+      <button>搜索</button>
+      <button>登录</button>
+      <button>注册</button>
+    </div>
+  </div>
+
+  <!-- 导航栏 -->
+  <ul class="nav">
+    <li>首页</li>
+    <li>新闻</li>
+    <li>关于我们</li>
+    <li>联系我们</li>
+    <li>风景图片</li>
+  </ul>
+
+  <!-- 图片轮播区域 -->
+  <div class="slider">
+    <button>&lt;</button>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1542223616-4bd5f5cddb9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="新闻图片1" style="max-width: 100%; max-height: 100%;">
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="新闻图片2" style="max-width: 100%; max-height: 100%;">
+    </div>
+    <div class="slide">
+      <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="新闻图片3" style="max-width: 100%; max-height: 100%;">
+    </div>
+    <button>&gt;</button>
+  </div>
+
+  <!-- 新闻列表和侧边栏区域 -->
+  <div class="news-container">
+    <div class="news-content">
+      <div class="news-image">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="新闻主图" style="max-width: 100%; max-height: 100%;">
+      </div>
+      <div class="news-list">
+        <div class="news-item">
+          <h3>中国网络文学海外读者数剧增</h3>
+          <p>2025.06</p>
+        </div>
+        <div class="news-item">
+          <h3>2025 年美国图书大奖获奖者公布</h3>
+          <p>2025.09</p>
+        </div>
+        <div class="news-item">
+          <h3>Vanity Fair 法国将设立“Vanity Fair Award”文学奖</h3>
+          <p>2025.09</p>
+        </div>
+        <div class="news-item">
+          <h3>RSL Pioneer Prize 首届获奖者 Maureen Duffy</h3>
+          <p>2025.09</p>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <p class="rolex-green">本网站提供每日热点新闻，为新闻爱好者提供平台，我们坚持"以闻会友”</p>
+      <p class="tiffany-blue">反馈邮箱：2749005102@qq.com</p>
+
+      <!-- 新增推荐阅读区域 -->
+      <div class="recommended">
+        <h4>推荐阅读</h4>
+        <div class="recommended-item">
+          <strong>什么是 National Book Awards 长名单？</strong>
+          <p>了解 2025 年美国图书大奖的长名单作品以及它们在文学界的意义。</p>
+        </div>
+        <div class="recommended-item">
+          <strong>中国网络文学出口：怎样走向世界</strong>
+          <p>探索网络文学如何从网络平台到电影电视剧，再到全球读者。</p>
+        </div>
+        <div class="recommended-item">
+          <strong>新设立的文学奖项如何影响作者</strong>
+          <p>Vanity Fair 的举措为年轻作家带来哪些机会？</p>
+        </div>
+        <div class="recommended-item">
+          <strong>老年作家与文学贡献</strong>
+          <p>Maureen Duffy 的作品如何体现其长年创作的价值。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
