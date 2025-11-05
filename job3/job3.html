@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>琴韵钢琴社 - 2025招新</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a365d, #2c5282);
+            color: white;
+            padding: 1rem 0;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .music-control {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .music-control:hover {
+            transform: scale(1.1);
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .nav-links a {
+            display: block;
+            padding: 1rem;
+            color: #2c5282;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .nav-links a:hover {
+            background-color: #f1f5f9;
+            color: #1a365d;
+            border-bottom: 3px solid #ecc94b;
+        }
+        
+        .hero {
+            height: 500px;
+            background: url('图片.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 54, 93, 0.7);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ecc94b;
+            color: #1a365d;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #d69e2e;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 80px;
+        }
+        
+        section h2 {
+            color: #1a365d;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ecc94b;
+            font-size: 2rem;
+        }
+        
+        .intro-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .intro-text {
+            flex: 1;
+            text-align: justify;
+        }
+        
+        .intro-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .intro-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .intro-image:hover {
+            transform: translateY(-5px);
+        }
+        
+        .intro-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .activities-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .activities-table th, 
+        .activities-table td {
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .activities-table th {
+            background-color: #1a365d;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .activities-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        
+        .activities-table tr:hover {
+            background-color: #f1f5f9;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-caption {
+            padding: 1rem;
+            background-color: white;
+            text-align: center;
+            font-weight: 500;
+            color: #1a365d;
+        }
+        
+        .member-stories {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .story {
+            background-color: #f8fafc;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid #ecc94b;
+        }
+        
+        .story h3 {
+            color: #1a365d;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .story p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+        
+        .form-container {
+            background-color: #f8fafc;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        
+        .form-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .form-table td {
+            padding: 1rem;
+            vertical-align: top;
+        }
+        
+        .form-table td:first-child {
+            width: 30%;
+            font-weight: 500;
+            color: #1a365d;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #ecc94b;
+            box-shadow: 0 0 0 3px rgba(236, 201, 75, 0.2);
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .radio-item,
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .form-actions {
+            text-align: center;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .form-actions input {
+            padding: 0.8rem 2rem;
+        }
+        
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .back-to-top {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #2c5282;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .back-to-top:hover {
+            color: #ecc94b;
+        }
+        
+        footer {
+            background-color: #1a365d;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .footer-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #ecc94b;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .intro-content {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+            }
+            
+            .nav-links li {
+                flex: 1 0 50%;
+            }
+            
+            .form-table td {
+                display: block;
+                width: 100% !important;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- 音频控制：点击社团名称播放背景音乐 -->
+            <div class="logo music-control" onclick="document.getElementById('bgMusic').play()">
+                🎹 琴韵钢琴社
+            </div>
+            <!-- 音频文件引入（路径：D:\2025 down\job3\钢琴曲.mp3） -->
+            <div>
+                <audio id="bgMusic" loop>
+                    <source src="钢琴曲.mp3" type="audio/mpeg">
+                    您的浏览器不支持音频播放
+                </audio>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#intro">社团简介</a></li>
+            <li><a href="#activities">活动安排</a></li>
+            <li><a href="#gallery">风采展示</a></li>
+            <li><a href="#stories">社员故事</a></li>
+            <li><a href="#signup">在线报名</a></li>
+        </ul>
+    </nav>
+    
+    <!-- 首页 banner：使用图片.png作为背景 -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>琴韵钢琴社 2025招新</h1>
+            <p>用黑白琴键，奏响青春华章。加入我们，一起探索音乐的无限可能。</p>
+            <a href="#signup" class="btn">立即报名</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- 社团简介：点击图片跳转至club_intro.html -->
+        <section id="intro">
+            <h2>社团简介</h2>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <p>琴韵钢琴社成立于2005年，是学校历史最悠久、影响力最大的音乐类社团之一。十八年来，我们始终秉承"以琴会友，以乐育人"的宗旨，致力于为广大钢琴爱好者提供一个交流学习、展示自我的平台。</p>
+                    
+                    <p>社团现有成员200余人，涵盖从大一新生到研究生各个年级。我们每周定期举办琴房练习、乐理知识讲座、演奏技巧分享等活动，每月组织一次小型音乐会，每学期举办一次大型汇报演出，为社员提供丰富的实践机会。</p>
+                    
+                    <p>无论你是拥有多年钢琴基础的"高手"，还是对钢琴一窍不通的"小白"，都能在琴韵找到属于自己的位置。我们有经验丰富的指导老师和优秀学长学姐，为不同水平的社员提供针对性指导。社团还拥有10间独立琴房和5架高品质三角钢琴，为社员提供良好的练习环境。</p>
+                    
+                    <p>除了常规活动，我们还积极参与校内外各类音乐交流活动。近年来，社团成员在全国大学生钢琴比赛、省市文艺汇演等活动中屡获佳绩，为学校赢得了荣誉。我们还与市内多家音乐厅、艺术中心建立了合作关系，为社员提供观摩演出、参与专业大师班的机会。</p>
+                    
+                    <p>琴韵不仅仅是一个钢琴社团，更是一个温暖的大家庭。在这里，你不仅能提升钢琴技艺，更能结识一群志同道合的朋友，共同度过一段充满音乐的美好时光。我们相信，音乐的力量能够跨越语言和文化的界限，连接心灵，传递美好。</p>
+                    
+                    <p>2025年，琴韵钢琴社期待你的加入，让我们一起用指尖的舞蹈，谱写青春的旋律，创造更多美好的音乐记忆！</p>
+                </div>
+                <!-- 图片引入：点击跳转至活动详情页 -->
+                <div class="intro-image">
+                    <a href="club_intro.html">
+                        <img src="图片.png" alt="琴韵钢琴社日常演奏">
+                    </a>
+                </div>
+            </div>
+            <a href="#" class="back-to-top">返回顶部 ↑</a>
+        </section>
+        
+        <!-- 活动安排：跨列表格 -->
+        <section id="activities">
+            <h2>活动安排</h2>
+            <p>琴韵钢琴社2025年春季学期将开展丰富多彩的活动，满足不同层次社员的需求，无论是零基础入门还是进阶提高，都能找到适合自己的内容。</p>
+            
+            <table class="activities-table">
+                <!-- 跨4列表头 -->
+                <tr>
+                    <th colspan="4">琴韵钢琴社 2025 年春季学期活动安排表</th>
+                </tr>
+                <tr>
+                    <th>活动时间</th>
+                    <th>活动名称</th>
+                    <th>活动地点</th>
+                    <th>负责人</th>
+                </tr>
+                <!-- 跨2行地点 -->
+                <tr>
+                    <td>3月第2周 周五晚</td>
+                    <td>新成员见面会</td>
+                    <td rowspan="2">学生活动中心 音乐教室201</td>
+                    <td>张强</td>
+                </tr>
+                <tr>
+                    <td>3月第3周 周六下午</td>
+                    <td>钢琴基础教学公开课</td>
+                    <td>李娜</td>
+                </tr>
+                <tr>
+                    <td>4月第2周 周日</td>
+                    <td>校园草地弹唱会（钢琴伴奏）</td>
+                    <td>操场东侧草坪</td>
+                    <td>王浩</td>
+                </tr>
+                <tr>
+                    <td>5月中旬 周六</td>
+                    <td>钢琴大师班（特邀市内钢琴家）</td>
+                    <td>学生活动中心 大礼堂</td>
+                    <td>刘芳</td>
+                </tr>
+                <tr>
+                    <td>6月第1周 周六晚</td>
+                    <td>期末专场音乐会</td>
+                    <td>大学生活动中心 大礼堂</td>
+                    <td>全体社团干部</td>
+                </tr>
+            </table>
+            
+            <p>此外，我们还将不定期组织琴房自由练习、乐谱分享会、钢琴电影赏析等小型活动，具体时间将通过社团微信群通知。所有活动均对社员免费开放，部分活动需提前报名确认参与。</p>
+            <a href="#" class="back-to-top">返回顶部 ↑</a>
+        </section>
+        
+        <!-- 风采展示：图片+视频 -->
+        <section id="gallery">
+            <h2>风采展示</h2>
+            <p>琴韵钢琴社的社员们在日常练习和各类演出中展现了对音乐的热爱，以下是我们的精彩瞬间。点击图片可查看更多活动详情，下方视频为社团日常活动记录。</p>
+            
+            <!-- 图片展示：点击跳转至详情页 -->
+            <div class="gallery">
+                <div class="gallery-item">
+                    <a href="club_intro.html">
+                        <img src="图片.png" alt="钢琴社日常演奏">
+                        <div class="gallery-caption">社员日常合奏练习</div>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="club_intro.html">
+                        <img src="图片.png" alt="校园草地音乐会">
+                        <div class="gallery-caption">校园草地钢琴伴奏演出</div>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="club_intro.html">
+                        <img src="图片.png" alt="大师班交流">
+                        <div class="gallery-caption">钢琴大师班现场交流</div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 视频引入：路径为D:\2025 down\job3\视频.mp4 -->
+            <div class="video-container">
+                <embed src="视频.mp4" width="800" height="450" type="video/mp4" autostart="false">
+             </embed>
+            </div>
+            
+            <a href="#" class="back-to-top">返回顶部 ↑</a>
+        </section>
+        
+        <!-- 社员故事 -->
+        <section id="stories">
+            <h2>社员故事</h2>
+            <p>每一位加入琴韵钢琴社的成员，都在这里留下了属于自己的音乐故事。从零基础到登台演出，从内向羞涩到自信表达，钢琴和社团见证了大家的成长。</p>
+            
+            <div class="member-stories">
+                <div class="story">
+                    <h3>从"不会握琴"到校园音乐会主角——小林的成长记</h3>
+                    <p>大一刚入学时，我对钢琴的认知还停留在"黑白键会发声"的阶段，连最基本的手型都不知道。看到琴韵钢琴社的招新海报时，我犹豫了很久：身边报名的同学大多有基础，我这样的"小白"能跟上吗？</p>
+                    
+                    <p>抱着试一试的心态加入后，我发现自己的担心是多余的。社团专门为零基础社员开设了"入门班"，由大三的学姐一对一指导。第一次进琴房时，学姐耐心地教我如何坐直、如何放手臂、如何用指尖触键，甚至连如何翻乐谱都细细讲解。最初练习《小星星》这样的简单曲目，我都要反复练上几十遍才能流畅弹奏，手指酸痛是常有的事，但每次弹对一段旋律时的成就感，都让我忍不住想继续练下去。</p>
+                    
+                    <p>社团的"老带新"制度特别温暖：每周固定的练习时间里，学长学姐会主动过来听我弹奏，指出我的问题；遇到难点时，大家会围在一起讨论不同的弹奏方法。记得有一次练习《致爱丽丝》的高潮部分，我总也掌握不好节奏，一位学长特意用手机录下自己的弹奏视频，放慢速度标上节拍，让我跟着模仿。就这样，在大家的帮助下，我的进步越来越快。</p>
+                    
+                    <p>大二下学期，社团举办"春日音乐会"，我鼓起勇气报名了独奏。为了这次演出，我提前两个月开始准备，每天放学后都去琴房练上2小时，社长还帮我调整了演奏时的表情和肢体动作。演出那天，当我坐在舞台中央的三角钢琴前，指尖触碰到琴键的瞬间，所有的紧张都消失了——熟悉的旋律从琴键上流淌出来，台下的掌声越来越响亮。那一刻，我突然明白：原来只要坚持和努力，零基础也能站上自己的舞台。</p>
+                    
+                    <p>现在我已经是大三的"老社员"了，也开始帮新加入的学弟学妹指导基础练习。回望这段时光，钢琴不仅让我学会了一门技能，更让我变得更自信、更有耐心。在琴韵，我收获的不仅是琴声，还有一群志同道合的朋友，一段闪闪发光的青春记忆。</p>
+                </div>
+                
+                <div class="story">
+                    <h3>钢琴让我打开"社交开关"——内向女孩小夏的改变</h3>
+                    <p>曾经的我是个特别内向的人：课堂上不敢主动发言，和陌生人说话会紧张到脸红，更别说在众人面前展示自己了。高考结束后，我决定在大学里改变自己，而琴韵钢琴社，就是我改变的起点。</p>
+                    
+                    <p>加入社团的第一次见面会上，社长让每个人介绍自己并分享对钢琴的想法。轮到我时，我紧张得声音发抖，说了不到两句就坐下了。会后，一位性格开朗的学姐看出了我的局促，主动过来和我聊天，还邀请我下次一起去琴房练习。那是我第一次感受到，原来和陌生人交流也可以这么轻松。</p>
+                    
+                    <p>刚开始去琴房时，我总是选最角落的位置，怕自己弹得不好被别人听到。有一次练琴时，旁边琴房的同学突然过来敲门，说喜欢我弹的《卡农》，还问我能不能一起合奏。那是我第一次和别人一起玩音乐——我们反复调整节奏，配合彼此的速度，当两种琴声完美融合时，一种奇妙的快乐涌上心头。从那以后，我开始主动和社员们交流，分享自己喜欢的曲目，也会请教他们弹奏技巧。</p>
+                    
+                    <p>社团的小型"音乐茶话会"给了我很多锻炼的机会。这种活动没有正式演出的压力，大家围坐在一起，有人弹钢琴，有人唱歌，有人分享音乐故事。我从一开始的只听不参与，到后来敢主动弹自己喜欢的曲子，再到后来能和大家一起合唱。记得有一次，我弹了一首自己改编的校园歌曲，结束后大家都鼓掌说"很好听"，还有同学问我能不能教他们弹。那一刻，我第一次感受到被认可的快乐，也慢慢打开了自己的"社交开关"。</p>
+                    
+                    <p>现在的我，不仅能在社团活动中自信地表达自己，还主动报名参加了学校的辩论赛。很多人说我变了，变得开朗、自信，但只有我知道，是钢琴和琴韵钢琴社给了我改变的勇气。在这里，没有"弹得好不好"的评判，只有对音乐的热爱和对彼此的包容。如果你也和曾经的我一样内向，不妨来琴韵试试——音乐或许会成为你打开心扉的钥匙。</p>
+                </div>
+                
+                <div class="story">
+                    <h3>因钢琴结缘，我们组建了"青春琴组"——四人小乐队的故事</h3>
+                    <p>我和阿哲、小雨、小宇是在琴韵钢琴社认识的，如今我们组成了一个小型"钢琴伴奏乐队"，经常在校园活动中表演，而我们的缘分，就始于一次社团的"即兴合奏"活动。</p>
+                    
+                    <p>那次活动要求大家自由组队，用钢琴搭配其他乐器表演。我会弹钢琴，阿哲会弹吉他，小雨和小宇会唱歌，我们四个恰好被分到了一组。一开始，我们不知道选什么曲目，争论了很久——我喜欢古典，阿哲喜欢摇滚，小雨和小宇喜欢流行。最后，我们决定改编一首《晴天》，用钢琴开头，加入吉他伴奏，再配合二重唱。</p>
+                    
+                    <p>排练的过程并不顺利：钢琴和吉他的节奏总也对不上，合唱的部分也经常跑调。有好几次，我们都差点吵起来，但没人想放弃。我们调整了排练时间，每周至少聚三次，从逐个乐器练习，到慢慢配合，再到加入情感表达。记得为了一个过渡段落，我们反复排练了两个小时，直到每个人都满意为止。</p>
+                    
+                    <p>我们的第一次表演是在社团的"期末汇报"上。当聚光灯打在我们身上，钢琴声响起时，我突然不紧张了——因为我知道，身边的伙伴会和我一起完成这段表演。那次表演很成功，台下的掌声持续了很久，还有老师过来夸我们"配合得很有默契"。从那以后，我们正式组建了"青春琴组"，还起了个口号："用音乐记录青春，用琴声连接你我"。</p>
+                    
+                    <p>这一年多来，我们一起参加了学校的"校园歌手大赛"（担任伴奏），一起在毕业季为学长学姐表演，一起去敬老院为老人们弹唱经典歌曲。我们不仅在音乐上配合得越来越默契，生活中也成了最好的朋友——阿哲会帮我修吉他，小雨会给我们带家乡的特产，小宇会帮我们制作演出海报。去年，我们还一起创作了一首原创歌曲《琴房的时光》，记录我们在社团的点点滴滴。</p>
+                    
+                    <p>明年我们就要毕业了，但我们约定，即使不在一个城市，也要每年聚一次，一起弹弹琴，聊聊天。有人说，大学最珍贵的是知识，但对我来说，更珍贵的是因钢琴结缘的友谊。琴韵钢琴社不仅教会了我如何弹好钢琴，更让我遇到了一群可以一起追逐热爱的朋友——这大概是我大学生涯中最宝贵的收获。</p>
+                </div>
+            </div>
+            
+            <a href="#" class="back-to-top">返回顶部 ↑</a>
+        </section>
+        
+        <!-- 在线报名表单 -->
+        <section id="signup">
+            <h2>在线报名</h2>
+            <p>如果你也热爱钢琴，渴望在音乐的世界里结识更多朋友，欢迎加入琴韵钢琴社！请填写以下报名表，我们会在3个工作日内与你联系，邀请你参加新成员见面会。</p>
+            
+            <div class="form-container">
+                <form action="#" method="post">
+                    <table class="form-table">
+                        <tr>
+                            <td>姓名：</td>
+                            <td><input type="text" name="name" required placeholder="请输入你的真实姓名"></td>
+                        </tr>
+                        <tr>
+                            <td>性别：</td>
+                            <td>
+                                <div class="radio-group">
+                                    <div class="radio-item">
+                                        <input type="radio" name="gender" id="male" value="male" required>
+                                        <label for="male">男</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" name="gender" id="female" value="female">
+                                        <label for="female">女</label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>出生日期：</td>
+                            <td>
+                                <input type="text" name="birthyear" required placeholder="年（如：2005）">
+                                <input type="text" name="birthmonth" required placeholder="月（如：9）">
+                                <input type="text" name="birthday" required placeholder="日（如：15）">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>手机号码：</td>
+                            <td><input type="tel" name="phone" required placeholder="请输入可联系的手机号"></td>
+                        </tr>
+                        <tr>
+                            <td>电子邮箱：</td>
+                            <td><input type="email" name="email" required placeholder="请输入你的邮箱地址"></td>
+                        </tr>
+                        <tr>
+                            <td>是否有钢琴基础：</td>
+                            <td>
+                                <div class="radio-group">
+                                    <div class="radio-item">
+                                        <input type="radio" name="experience" id="beginner" value="beginner" required>
+                                        <label for="beginner">零基础（从未接触过钢琴）</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" name="experience" id="elementary" value="elementary">
+                                        <label for="elementary">初级（会简单曲目，如《小星星》）</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" name="experience" id="intermediate" value="intermediate">
+                                        <label for="intermediate">中级（会弹奏完整曲目，如《致爱丽丝》）</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" name="experience" id="advanced" value="advanced">
+                                        <label for="advanced">高级（有考级证书或专业学习经历）</label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>兴趣方向（可多选）：</td>
+                            <td>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" name="interest" id="classic" value="classic">
+                                        <label for="classic">古典钢琴（巴赫、莫扎特等）</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" name="interest" id="pop" value="pop">
+                                        <label for="pop">流行钢琴（现代歌曲改编）</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" name="interest" id="ensemble" value="ensemble">
+                                        <label for="ensemble">钢琴合奏（与其他乐器配合）</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" name="interest" id="compose" value="compose">
+                                        <label for="compose">音乐创作（简单曲谱编写）</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" name="interest" id="performance" value="performance">
+                                        <label for="performance">舞台演出（参与各类音乐会）</label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>年级：</td>
+                            <td>
+                                <select name="grade" required>
+                                    <option value="">请选择你的年级</option>
+                                    <option value="freshman">大一</option>
+                                    <option value="sophomore">大二</option>
+                                    <option value="junior">大三</option>
+                                    <option value="senior">大四</option>
+                                    <option value="graduate">研究生</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>自我介绍：</td>
+                            <td>
+                                <textarea name="introduction" required placeholder="请简单介绍自己、以及加入钢琴社的理由（例如：我是XX学院XX专业的学生，从小喜欢音乐，希望通过钢琴社学会弹钢琴，认识更多喜欢音乐的朋友...）"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>是否服从活动安排：</td>
+                            <td>
+                                <div class="radio-group">
+                                    <div class="radio-item">
+                                        <input type="radio" name="arrangement" id="agree" value="agree" required>
+                                        <label for="agree">是（能按时参加社团主要活动）</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" name="arrangement" id="disagree" value="disagree">
+                                        <label for="disagree">否（可能因学业等原因无法固定参与）</label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <div class="form-actions">
+                        <input type="submit" class="btn" value="提交报名">
+                        <input type="reset" class="btn" style="background-color: #e2e8f0;" value="重置表单">
+                    </div>
+                </form>
+            </div>
+            
+            <a href="#" class="back-to-top">返回顶部 ↑</a>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <h3>琴韵钢琴社</h3>
+            <p>用黑白琴键，奏响青春华章</p>
+            <div class="footer-links">
+                <a href="#intro">社团简介</a>
+                <a href="#activities">活动安排</a>
+                <a href="#gallery">风采展示</a>
+                <a href="#stories">社员故事</a>
+                <a href="#signup">在线报名</a>
+            </div>
+            <p>联系我们：piano_club@school.edu.cn | 咨询QQ群：123456789</p>
+            <p>&copy; 2025 琴韵钢琴社 版权所有</p>
+        </div>
+    </footer>
+</body>
+</html>
